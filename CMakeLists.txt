@@ -6,6 +6,7 @@ SET(CMAKE_AUTOUIC ON)
 SET(CMAKE_AUTORCC ON)
 ADD_EXECUTABLE(Gt
         main.cpp
+        File.cpp
         MainWindow.cpp
-        )
+        TableModel.cpp TableModel.hpp)
 TARGET_LINK_LIBRARIES(Gt PRIVATE Qt5::Widgets)
