@@ -8,5 +8,5 @@ ADD_EXECUTABLE(Gt
         main.cpp
         File.cpp
         MainWindow.cpp
-        TableModel.cpp TableModel.hpp)
+        TableModel.cpp TableModel.hpp FileTableWidget.cpp FileTableWidget.hpp)
 TARGET_LINK_LIBRARIES(Gt PRIVATE Qt5::Widgets)

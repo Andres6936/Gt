@@ -3,19 +3,25 @@
 #ifndef QTGIT_MAINWINDOW_HPP
 #define QTGIT_MAINWINDOW_HPP
 
-#include <QWidget>
+#include <QMainWindow>
+
+#include "FileTableWidget.hpp"
 
 namespace Gt
 {
 
-	class MainWindow : public QWidget
+	class MainWindow : public QMainWindow
 	{
 
 		Q_OBJECT
 
+	private:
+
+		FileTableWidget *fileTableWidget{};
+
 	public:
 
-		explicit MainWindow(QWidget* parent = nullptr);
+		explicit MainWindow();
 
 		virtual ~MainWindow() = default;
 

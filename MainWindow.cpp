@@ -4,7 +4,9 @@
 
 using namespace Gt;
 
-MainWindow::MainWindow(QWidget* parent) : QWidget(parent)
+MainWindow::MainWindow()
+	: QMainWindow(), fileTableWidget(new FileTableWidget())
 {
-
+	setCentralWidget(fileTableWidget);
+	setWindowTitle(tr("Git Explorer File"));
 }
