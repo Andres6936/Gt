@@ -22,7 +22,8 @@ int TableModel::rowCount(const QModelIndex& parent) const
 
 int TableModel::columnCount(const QModelIndex& parent) const
 {
-	// Value is always 2 because we only need space for the Name and Path columns.
+	// Value is always 2 because we only need space for the Name and Path
+	// 	columns.
 	return parent.isValid() ? 0 : 2;
 }
 
@@ -31,9 +32,21 @@ bool TableModel::setData(const QModelIndex& index, const QVariant& value, int ro
 	return QAbstractItemModel::setData(index, value, role);
 }
 
-bool TableModel::insertRows(int row, int count, const QModelIndex& parent)
+/**
+ * The insertRows() function is called before new data is added, otherwise the
+ * 	data will not be displayed.
+ */
+bool TableModel::insertRows(int position, int rows, const QModelIndex& parent)
 {
-	return QAbstractItemModel::insertRows(row, count, parent);
+	beginInsertRows(QModelIndex{}, position, position + rows - 1);
+
+	for (int row = 0; row < rows; ++row)
+	{
+		files.insert(position, {QString{}, QString{}});
+	}
+
+	endInsertRows();
+	return true;
 }
 
 bool TableModel::removeRows(int row, int count, const QModelIndex& parent)
