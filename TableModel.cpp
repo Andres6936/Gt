@@ -27,9 +27,39 @@ int TableModel::columnCount(const QModelIndex& parent) const
 	return parent.isValid() ? 0 : 2;
 }
 
+/**
+ * The setData() function is the function that inserts data into the table,
+ * 	item by item and not row by row. This means that to fill a row in the
+ * 	address book, setData() must be called twice, as each row has 2 columns.
+ * 	It is important to emit the dataChanged() signal as it tells all connected
+ * 	views to update their displays.
+ */
 bool TableModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-	return QAbstractItemModel::setData(index, value, role);
+	if (index.isValid() and role == Qt::EditRole)
+	{
+		const int row = index.row();
+		File file = files.value(row);
+
+		switch (index.column())
+		{
+		case 0:
+			file.name = value.toString();
+			break;
+		case 1:
+			file.path = value.toString();
+			break;
+		default:
+			break;
+		}
+
+		files.replace(row, file);
+		emit dataChanged(index, index, {Qt::DisplayRole, Qt::EditRole});
+
+		return true;
+	}
+
+	return false;
 }
 
 /**
