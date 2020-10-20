@@ -5,7 +5,7 @@
 using namespace Gt;
 
 FileTableWidget::FileTableWidget(QWidget* parent) noexcept
-	: QTabWidget(parent), table(new TableModel(this))
+	: QTableView(parent), table(new TableModel(this))
 {
-
+	this->setModel(table);
 }

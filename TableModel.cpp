@@ -81,7 +81,25 @@ QVariant TableModel::data(const QModelIndex& index, int role) const
 
 QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-	return QAbstractItemModel::headerData(section, orientation, role);
+	if (role not_eq Qt::DisplayRole)
+	{
+		return QVariant{};
+	}
+
+	if (orientation == Qt::Horizontal)
+	{
+		switch (section)
+		{
+		case 0:
+			return tr("Name");
+		case 1:
+			return tr("Path");
+		default:
+			break;
+		}
+	}
+
+	return QVariant{};
 }
 
 Qt::ItemFlags TableModel::flags(const QModelIndex& index) const

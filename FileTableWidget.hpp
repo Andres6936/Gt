@@ -4,13 +4,13 @@
 #define GT_FILETABLEWIDGET_HPP
 
 #include <QWidget>
-#include <QTabWidget>
+#include <QTableView>
 
 #include "TableModel.hpp"
 
 namespace Gt
 {
-	class FileTableWidget : public QTabWidget
+	class FileTableWidget : public QTableView
 	{
 
 		Q_OBJECT
