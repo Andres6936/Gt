@@ -158,9 +158,19 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
 	return QVariant{};
 }
 
+/**
+ * The flags() function returns the item flags for the given index.
+ */
 Qt::ItemFlags TableModel::flags(const QModelIndex& index) const
 {
-	return QAbstractTableModel::flags(index);
+	if (not index.isValid())
+	{
+		return Qt::ItemIsEnabled;
+	}
+
+	// We set the Qt::ItemIsEditable flag because we want to allow the
+	// 	TableModel to be edited.
+	return QAbstractTableModel::flags(index) | Qt::ItemIsEditable;
 }
 
 const QVector<File>& TableModel::getFiles() const noexcept
