@@ -27,8 +27,6 @@ namespace Gt
 
 	signals:
 
-		void selectionChanged(const QItemSelection& selection);
-
 	};
 }
 

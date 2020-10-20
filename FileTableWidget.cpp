@@ -25,8 +25,3 @@ void FileTableWidget::setupTableStyle() const noexcept
 {
 	this->horizontalHeader()->setStretchLastSection(true);
 }
-
-void FileTableWidget::selectionChanged(const QItemSelection& selection)
-{
-
-}
