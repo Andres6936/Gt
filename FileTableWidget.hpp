@@ -25,6 +25,8 @@ namespace Gt
 
 		explicit FileTableWidget(QWidget* parent = nullptr) noexcept;
 
+		void addEntry(const QString& name, const QString& path) const noexcept;
+
 	signals:
 
 	};
