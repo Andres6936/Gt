@@ -10,3 +10,4 @@ ADD_EXECUTABLE(Gt
         MainWindow.cpp
         TableModel.cpp TableModel.hpp FileTableWidget.cpp FileTableWidget.hpp)
 TARGET_LINK_LIBRARIES(Gt PRIVATE Qt5::Widgets)
+SET_TARGET_PROPERTIES(Gt PROPERTIES CXX_STANDARD 17)
