@@ -19,6 +19,8 @@ namespace Gt
 
 		TableModel *table {};
 
+		void setupTableStyle() const noexcept;
+
 	public:
 
 		explicit FileTableWidget(QWidget* parent = nullptr) noexcept;
