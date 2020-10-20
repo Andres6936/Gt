@@ -16,9 +16,17 @@ FileTableWidget::FileTableWidget(QWidget* parent) noexcept
 	this->setSortingEnabled(false);
 
 	setupTableStyle();
+
+	connect(this->selectionModel(), &QItemSelectionModel::selectionChanged,
+			this, &FileTableWidget::selectionChanged);
 }
 
 void FileTableWidget::setupTableStyle() const noexcept
 {
 	this->horizontalHeader()->setStretchLastSection(true);
+}
+
+void FileTableWidget::selectionChanged(const QItemSelection& selection)
+{
+
 }

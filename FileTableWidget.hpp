@@ -25,6 +25,10 @@ namespace Gt
 
 		explicit FileTableWidget(QWidget* parent = nullptr) noexcept;
 
+	signals:
+
+		void selectionChanged(const QItemSelection& selection);
+
 	};
 }
 
