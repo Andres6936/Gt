@@ -36,7 +36,7 @@ namespace Gt
 
 		bool insertRows(int position, int rows, const QModelIndex& parent = QModelIndex{}) override;
 
-		bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex{}) override;
+		bool removeRows(int position, int rows, const QModelIndex& parent = QModelIndex{}) override;
 
 		QVariant data(const QModelIndex& index, int role) const override;
 

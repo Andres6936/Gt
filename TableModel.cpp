@@ -49,9 +49,22 @@ bool TableModel::insertRows(int position, int rows, const QModelIndex& parent)
 	return true;
 }
 
-bool TableModel::removeRows(int row, int count, const QModelIndex& parent)
+/**
+ * The removeRows() function is called to remove data. Again, beginRemoveRows()
+ * 	and endRemoveRows() are called to ensure all connected views are aware of
+ * 	the changes.
+ */
+bool TableModel::removeRows(int position, int rows, const QModelIndex& parent)
 {
-	return QAbstractItemModel::removeRows(row, count, parent);
+	beginRemoveRows(QModelIndex{}, position, position + rows - 1);
+
+	for (int row = 0; row < rows; ++row)
+	{
+		files.removeAt(position);
+	}
+
+	endRemoveRows();
+	return true;
 }
 
 /**
