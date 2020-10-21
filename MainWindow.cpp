@@ -16,6 +16,7 @@ MainWindow::MainWindow()
 	setWindowTitle(tr("Git Explorer File"));
 
 	// The function returns -1 if the font could not be loaded.
+	// Feature C++17, initialize variable in if-block
 	if (const int id = QFontDatabase::addApplicationFont(
 			"./Font/Atkinson-Hyperlegible-Regular-102.ttf"); id == -1)
 	{
