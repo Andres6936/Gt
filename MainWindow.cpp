@@ -5,6 +5,7 @@
 #include <QFontDatabase>
 #include <QMessageBox>
 #include <filesystem>
+#include <qdebug.h>
 
 using namespace Gt;
 
@@ -18,9 +19,9 @@ MainWindow::MainWindow()
 	int id = QFontDatabase::addApplicationFont("./Font/Atkinson-Hyperlegible-Regular-102.ttf");
 	QMessageBox::information(nullptr, "Message", QString::number(id));
 
-	QFont font{};
-	font.setFamily("Atkinson-Hyperlegible");
-	font.setItalic(true);
+	QFont font("Atkinson Hyperlegible", 11);
+
+	qDebug() << font.family();
 
 	this->setFont(font);
 
