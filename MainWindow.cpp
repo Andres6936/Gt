@@ -2,6 +2,8 @@
 
 #include "MainWindow.hpp"
 
+#include <QFontDatabase>
+#include <QMessageBox>
 #include <filesystem>
 
 using namespace Gt;
@@ -12,6 +14,15 @@ MainWindow::MainWindow()
 {
 	setCentralWidget(fileTableWidget);
 	setWindowTitle(tr("Git Explorer File"));
+
+	int id = QFontDatabase::addApplicationFont("./Font/Atkinson-Hyperlegible-Regular-102.ttf");
+	QMessageBox::information(nullptr, "Message", QString::number(id));
+
+	QFont font{};
+	font.setFamily("Atkinson-Hyperlegible");
+	font.setItalic(true);
+
+	this->setFont(font);
 
 	startUp();
 }
