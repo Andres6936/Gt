@@ -4,13 +4,13 @@
 #define GT_FILETABLEWIDGET_HPP
 
 #include <QWidget>
-#include <QTableView>
+#include <QTreeView>
 
 #include "TableModel.hpp"
 
 namespace Gt
 {
-	class FileTableWidget : public QTableView
+	class FileTableWidget : public QTreeView
 	{
 
 		Q_OBJECT
@@ -18,8 +18,6 @@ namespace Gt
 	private:
 
 		TableModel *table {};
-
-		void setupTableStyle() const noexcept;
 
 	public:
 

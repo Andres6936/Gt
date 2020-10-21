@@ -7,7 +7,7 @@
 using namespace Gt;
 
 FileTableWidget::FileTableWidget(QWidget* parent) noexcept
-	: QTableView(parent), table(new TableModel(this))
+	: QTreeView(parent), table(new TableModel(this))
 {
 	this->setModel(table);
 	this->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -19,11 +19,6 @@ FileTableWidget::FileTableWidget(QWidget* parent) noexcept
 
 	connect(this->selectionModel(), &QItemSelectionModel::selectionChanged,
 			this, &FileTableWidget::selectionChanged);
-}
-
-void FileTableWidget::setupTableStyle() const noexcept
-{
-	this->horizontalHeader()->setStretchLastSection(true);
 }
 
 void FileTableWidget::addEntry(const QString& name, const QString& path) const noexcept
