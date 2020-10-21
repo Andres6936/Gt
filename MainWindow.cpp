@@ -3,7 +3,6 @@
 #include "MainWindow.hpp"
 
 #include <QFontDatabase>
-#include <QMessageBox>
 #include <filesystem>
 #include <qdebug.h>
 
@@ -16,14 +15,14 @@ MainWindow::MainWindow()
 	setCentralWidget(fileTableWidget);
 	setWindowTitle(tr("Git Explorer File"));
 
-	int id = QFontDatabase::addApplicationFont("./Font/Atkinson-Hyperlegible-Regular-102.ttf");
-	QMessageBox::information(nullptr, "Message", QString::number(id));
+	// The function returns -1 if the font could not be loaded.
+	if (const int id = QFontDatabase::addApplicationFont(
+			"./Font/Atkinson-Hyperlegible-Regular-102.ttf"); id == -1)
+	{
+		qWarning() << "The font Atkinson Hyperlegible cannot be found.";
+	}
 
-	QFont font("Atkinson Hyperlegible", 11);
-
-	qDebug() << font.family();
-
-	this->setFont(font);
+	this->setFont({ "Atkinson Hyperlegible", 11 });
 
 	startUp();
 }
