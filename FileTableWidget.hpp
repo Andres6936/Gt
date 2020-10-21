@@ -5,8 +5,7 @@
 
 #include <QWidget>
 #include <QTreeView>
-
-#include "TableModel.hpp"
+#include <QFileSystemModel>
 
 namespace Gt
 {
@@ -17,7 +16,7 @@ namespace Gt
 
 	private:
 
-		TableModel *table {};
+		QFileSystemModel *table {};
 
 	public:
 

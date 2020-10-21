@@ -7,8 +7,10 @@
 using namespace Gt;
 
 FileTableWidget::FileTableWidget(QWidget* parent) noexcept
-	: QTreeView(parent), table(new TableModel(this))
+	: QTreeView(parent), table(new QFileSystemModel())
 {
+	table->setRootPath(QDir::currentPath());
+
 	this->setModel(table);
 	this->setSelectionBehavior(QAbstractItemView::SelectRows);
 	this->setEditTriggers(QAbstractItemView::NoEditTriggers);
