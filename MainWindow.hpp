@@ -5,7 +5,7 @@
 
 #include <QMainWindow>
 
-#include "FileTableWidget.hpp"
+#include "FileSystemTree.hpp"
 
 namespace Gt
 {
@@ -17,7 +17,7 @@ namespace Gt
 
 	private:
 
-		FileTableWidget *fileTableWidget{};
+		FileSystemTree *fileTableWidget{};
 
 		void startUp() const noexcept;
 

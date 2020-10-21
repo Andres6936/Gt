@@ -10,7 +10,7 @@ using namespace Gt;
 
 
 MainWindow::MainWindow()
-	: QMainWindow(), fileTableWidget(new FileTableWidget())
+	: QMainWindow(), fileTableWidget(new FileSystemTree())
 {
 	setCentralWidget(fileTableWidget);
 	setWindowTitle(tr("Git Explorer File"));

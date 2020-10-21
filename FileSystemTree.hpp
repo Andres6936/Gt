@@ -1,7 +1,7 @@
 // Joan Andrés (@Andres6936) Github.
 
-#ifndef GT_FILETABLEWIDGET_HPP
-#define GT_FILETABLEWIDGET_HPP
+#ifndef GT_FILESYSTEMTREE_HPP
+#define GT_FILESYSTEMTREE_HPP
 
 #include <QWidget>
 #include <QTreeView>
@@ -9,18 +9,18 @@
 
 namespace Gt
 {
-	class FileTableWidget : public QTreeView
+	class FileSystemTree : public QTreeView
 	{
 
 		Q_OBJECT
 
 	private:
 
-		QFileSystemModel *table {};
+		QFileSystemModel *fileSystem {};
 
 	public:
 
-		explicit FileTableWidget(QWidget* parent = nullptr) noexcept;
+		explicit FileSystemTree(QWidget* parent = nullptr) noexcept;
 
 		void addEntry(const QString& name, const QString& path) const noexcept;
 
@@ -29,4 +29,4 @@ namespace Gt
 	};
 }
 
-#endif //GT_FILETABLEWIDGET_HPP
+#endif //GT_FILESYSTEMTREE_HPP

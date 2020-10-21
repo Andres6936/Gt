@@ -7,7 +7,7 @@ SET(CMAKE_AUTORCC ON)
 ADD_EXECUTABLE(Gt
         main.cpp
         MainWindow.cpp
-        FileTableWidget.cpp FileTableWidget.hpp)
+        FileSystemTree.cpp FileSystemTree.hpp)
 TARGET_LINK_LIBRARIES(Gt PRIVATE Qt5::Widgets)
 SET_TARGET_PROPERTIES(Gt PROPERTIES CXX_STANDARD 17)
 
