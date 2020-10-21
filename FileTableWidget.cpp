@@ -15,8 +15,6 @@ FileTableWidget::FileTableWidget(QWidget* parent) noexcept
 	this->setSelectionMode(QAbstractItemView::SingleSelection);
 	this->setSortingEnabled(false);
 
-	setupTableStyle();
-
 	connect(this->selectionModel(), &QItemSelectionModel::selectionChanged,
 			this, &FileTableWidget::selectionChanged);
 }
