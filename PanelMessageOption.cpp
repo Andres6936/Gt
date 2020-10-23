@@ -2,6 +2,7 @@
 
 #include "PanelMessageOption.hpp"
 
+#include <QMenu>
 #include <QHBoxLayout>
 #include <QPushButton>
 
@@ -11,6 +12,10 @@ PanelMessageOption::PanelMessageOption(QWidget* parent) noexcept : QWidget(paren
 {
 	auto mainLayout = new QHBoxLayout(this);
 	auto commitButton = new QPushButton("Commit", this);
+	auto commitAndPush = new QMenu( this);
+	commitAndPush->addAction("Commit and Push");
+
+	commitButton->setMenu(commitAndPush);
 
 	mainLayout->addWidget(commitButton);
 
