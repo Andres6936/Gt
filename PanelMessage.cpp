@@ -11,6 +11,7 @@ PanelMessage::PanelMessage(QWidget* parent) noexcept : QWidget(parent)
 {
 	auto mainLayout = new QVBoxLayout(this);
 	auto message = new QTextEdit(this);
+	message->setPlaceholderText("Commit Message");
 
 	mainLayout->addWidget(message);
 
