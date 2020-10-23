@@ -3,10 +3,14 @@
 #ifndef GT_PANELMESSAGE_HPP
 #define GT_PANELMESSAGE_HPP
 
+#include <QWidget>
+
 namespace Gt
 {
-	class PanelMessage
+	class PanelMessage : public QWidget
 	{
+
+		Q_OBJECT
 
 	public:
 
