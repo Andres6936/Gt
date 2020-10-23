@@ -4,7 +4,7 @@ PROJECT(Gt)
 INCLUDE(CMakeModules/CPM.cmake)
 
 CPMAddPackage(
-        NAME LibGit2
+        NAME LIB_GIT_2
         GITHUB_REPOSITORY libgit2/libgit2
         VERSION 1.1.0
 )
@@ -17,6 +17,7 @@ ADD_EXECUTABLE(Gt
         main.cpp
         MainWindow.cpp
         FileSystemTree.cpp FileSystemTree.hpp)
+TARGET_INCLUDE_DIRECTORIES(Gt PRIVATE ${LIB_GIT_2_SOURCE_DIR}/include/)
 TARGET_LINK_LIBRARIES(Gt PRIVATE git2)
 TARGET_LINK_LIBRARIES(Gt PRIVATE Qt5::Widgets)
 SET_TARGET_PROPERTIES(Gt PROPERTIES CXX_STANDARD 17)
