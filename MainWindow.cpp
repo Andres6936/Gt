@@ -2,6 +2,7 @@
 
 #include "MainWindow.hpp"
 #include "PanelFiles.hpp"
+#include "PanelMessage.hpp"
 
 #include <QVBoxLayout>
 #include <QFontDatabase>
@@ -27,9 +28,12 @@ MainWindow::MainWindow()
 	this->setFont({ "Atkinson Hyperlegible", 11 });
 
 	auto mainLayout = new QVBoxLayout(this);
+
 	auto panelFiles = new PanelFiles(this);
+	auto panelMessage = new PanelMessage(this);
 
 	mainLayout->addWidget(panelFiles);
+	mainLayout->addWidget(panelMessage);
 
 	this->setLayout(mainLayout);
 }

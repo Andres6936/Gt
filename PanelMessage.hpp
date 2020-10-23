@@ -14,6 +14,8 @@ namespace Gt
 
 	public:
 
+		explicit PanelMessage(QWidget* parent = nullptr) noexcept;
+
 	};
 }
 
