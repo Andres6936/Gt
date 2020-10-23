@@ -3,23 +3,19 @@
 #ifndef QTGIT_MAINWINDOW_HPP
 #define QTGIT_MAINWINDOW_HPP
 
-#include <QMainWindow>
+#include <QWidget>
 
 #include "FileSystemTree.hpp"
 
 namespace Gt
 {
 
-	class MainWindow : public QMainWindow
+	class MainWindow : public QWidget
 	{
 
 		Q_OBJECT
 
 	private:
-
-		FileSystemTree *fileTableWidget{};
-
-		void startUp() const noexcept;
 
 	public:
 

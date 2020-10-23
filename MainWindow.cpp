@@ -1,18 +1,19 @@
 // Joan Andrés (@Andres6936) Github.
 
 #include "MainWindow.hpp"
+#include "PanelFiles.hpp"
 
+#include <QVBoxLayout>
 #include <QFontDatabase>
-#include <filesystem>
+
 #include <qdebug.h>
 
 using namespace Gt;
 
 
 MainWindow::MainWindow()
-	: QMainWindow(), fileTableWidget(new FileSystemTree())
+	: QWidget()
 {
-	setCentralWidget(fileTableWidget);
 	setWindowTitle(tr("Git Explorer File"));
 
 	// The function returns -1 if the font could not be loaded.
@@ -25,18 +26,10 @@ MainWindow::MainWindow()
 
 	this->setFont({ "Atkinson Hyperlegible", 11 });
 
-	startUp();
-}
+	auto mainLayout = new QVBoxLayout(this);
+	auto panelFiles = new PanelFiles(this);
 
-void MainWindow::startUp() const noexcept
-{
-	namespace fs = std::filesystem;
+	mainLayout->addWidget(panelFiles);
 
-	for (const fs::directory_entry& directory: fs::directory_iterator("/"))
-	{
-		const fs::path& path = directory.path();
-
-		fileTableWidget->addEntry(QString::fromStdString(path.filename().string()),
-				QString::fromStdString(path.relative_path()));
-	}
+	this->setLayout(mainLayout);
 }
