@@ -3,13 +3,14 @@
 #ifndef GT_PANELMESSAGE_HPP
 #define GT_PANELMESSAGE_HPP
 
-
-class PanelMessage
+namespace Gt
 {
+	class PanelMessage
+	{
 
-public:
+	public:
 
-};
-
+	};
+}
 
 #endif //GT_PANELMESSAGE_HPP

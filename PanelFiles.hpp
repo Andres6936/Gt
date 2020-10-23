@@ -3,13 +3,14 @@
 #ifndef GT_PANELFILES_HPP
 #define GT_PANELFILES_HPP
 
-
-class PanelFiles
+namespace Gt
 {
+	class PanelFiles
+	{
 
-public:
+	public:
 
-};
-
+	};
+}
 
 #endif //GT_PANELFILES_HPP
