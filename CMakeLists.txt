@@ -16,7 +16,7 @@ SET(CMAKE_AUTORCC ON)
 ADD_EXECUTABLE(Gt
         main.cpp
         MainWindow.cpp
-        FileSystemTree.cpp FileSystemTree.hpp)
+        FileSystemTree.cpp FileSystemTree.hpp PanelFiles.cpp PanelFiles.hpp PanelMessage.cpp PanelMessage.hpp)
 TARGET_INCLUDE_DIRECTORIES(Gt PRIVATE ${LIB_GIT_2_SOURCE_DIR}/include/)
 TARGET_LINK_LIBRARIES(Gt PRIVATE git2)
 TARGET_LINK_LIBRARIES(Gt PRIVATE Qt5::Widgets)
