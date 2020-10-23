@@ -4,6 +4,9 @@
 #define GT_PANELFILES_HPP
 
 #include <QWidget>
+#include <QVBoxLayout>
+
+#include "FileSystemTree.hpp"
 
 namespace Gt
 {
@@ -12,7 +15,15 @@ namespace Gt
 
 		Q_OBJECT
 
+	private:
+
+		QVBoxLayout *mainLayout;
+
+		FileSystemTree *fileSystem;
+
 	public:
+
+		explicit PanelFiles(QWidget *parent = nullptr) noexcept;
 
 	};
 }
