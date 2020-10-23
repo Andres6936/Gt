@@ -1,5 +1,14 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.17)
 PROJECT(Gt)
+
+INCLUDE(CMakeModules/CPM.cmake)
+
+CPMAddPackage(
+        NAME LibGit2
+        GITHUB_REPOSITORY libgit2/libgit2
+        VERSION 1.1.0
+)
+
 FIND_PACKAGE(Qt5Widgets REQUIRED)
 SET(CMAKE_AUTOMOC ON)
 SET(CMAKE_AUTOUIC ON)
@@ -8,6 +17,7 @@ ADD_EXECUTABLE(Gt
         main.cpp
         MainWindow.cpp
         FileSystemTree.cpp FileSystemTree.hpp)
+TARGET_LINK_LIBRARIES(Gt PRIVATE git2)
 TARGET_LINK_LIBRARIES(Gt PRIVATE Qt5::Widgets)
 SET_TARGET_PROPERTIES(Gt PROPERTIES CXX_STANDARD 17)
 
