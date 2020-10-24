@@ -21,8 +21,6 @@ namespace Gt
 
 		explicit MainWindow();
 
-		virtual ~MainWindow() = default;
-
 	signals:
 
 	public slots:
