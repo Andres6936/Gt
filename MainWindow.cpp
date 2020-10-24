@@ -26,6 +26,7 @@ MainWindow::MainWindow()
 	}
 
 	this->setFont({ "Atkinson Hyperlegible", 11 });
+	this->setStyleSheet("background-color: white;");
 
 	auto mainLayout = new QVBoxLayout(this);
 
