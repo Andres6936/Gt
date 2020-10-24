@@ -12,8 +12,7 @@
 using namespace Gt;
 
 
-MainWindow::MainWindow()
-	: QWidget()
+MainWindow::MainWindow() noexcept : QWidget()
 {
 	setWindowTitle(tr("Git Explorer File"));
 

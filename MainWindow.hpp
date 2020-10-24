@@ -19,7 +19,7 @@ namespace Gt
 
 	public:
 
-		explicit MainWindow();
+		MainWindow() noexcept;
 
 	signals:
 
