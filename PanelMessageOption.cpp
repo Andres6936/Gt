@@ -3,10 +3,12 @@
 #include "PanelMessageOption.hpp"
 
 #include <QMenu>
+#include <QEvent>
 #include <QCheckBox>
 #include <QHBoxLayout>
-#include <QPushButton>
 #include <QToolButton>
+
+#include <qdebug.h>
 
 using namespace Gt;
 
@@ -17,9 +19,8 @@ PanelMessageOption::PanelMessageOption(QWidget* parent) noexcept : QWidget(paren
 	auto commitAndPush = new QMenu( this);
 	commitAndPush->addAction("Commit and Push");
 
-	auto commitButton = new QPushButton("Commit", this);
+	commitButton = new QPushButton("Commit", this);
 	commitButton->setMenu(commitAndPush);
-	commitButton->setStyleSheet("background-color: #4B97D9; color: white; font-weight: bold;");
 
 	auto amendCheckBox = new QCheckBox("Amend", this);
 
@@ -32,4 +33,18 @@ PanelMessageOption::PanelMessageOption(QWidget* parent) noexcept : QWidget(paren
 	mainLayout->addWidget(showCommitOptions);
 
 	this->setLayout(mainLayout);
+	this->installEventFilter(this);
+}
+
+bool PanelMessageOption::eventFilter(QObject* _object, QEvent* _event)
+{
+	if (_object == this)
+	{
+		if (_event->type() == QEvent::Enter)
+		{
+			commitButton->setStyleSheet("background-color: #4B97D9; color: white; font-weight: bold;");
+		}
+	}
+
+	return false;
 }

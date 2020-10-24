@@ -4,6 +4,7 @@
 #define GT_PANELMESSAGEOPTION_HPP
 
 #include <QWidget>
+#include <QPushButton>
 
 namespace Gt
 {
@@ -13,9 +14,15 @@ namespace Gt
 
 		Q_OBJECT
 
+	private:
+
+		QPushButton* commitButton;
+
 	public:
 
 		explicit PanelMessageOption(QWidget* parent = nullptr) noexcept;
+
+		bool eventFilter(QObject* _object, QEvent* _event) override;
 
 	};
 
