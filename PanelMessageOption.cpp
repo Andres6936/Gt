@@ -19,6 +19,7 @@ PanelMessageOption::PanelMessageOption(QWidget* parent) noexcept : QWidget(paren
 
 	auto commitButton = new QPushButton("Commit", this);
 	commitButton->setMenu(commitAndPush);
+	commitButton->setStyleSheet("background-color: #4B97D9; color: white; font-weight: bold;");
 
 	auto amendCheckBox = new QCheckBox("Amend", this);
 
