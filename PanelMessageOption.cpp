@@ -24,13 +24,16 @@ PanelMessageOption::PanelMessageOption(QWidget* parent) noexcept : QWidget(paren
 
 	auto amendCheckBox = new QCheckBox("Amend", this);
 
-	auto commitMessageHistory = new QToolButton(this);
 	auto showCommitOptions = new QToolButton(this);
+	showCommitOptions->setIcon(QIcon("./Resources/Svg/gear.svg"));
+
+	auto commitMessageHistory = new QToolButton(this);
+	commitMessageHistory->setIcon(QIcon("./Resources/Svg/historyInline.svg"));
 
 	mainLayout->addWidget(commitButton);
 	mainLayout->addWidget(amendCheckBox);
-	mainLayout->addWidget(commitMessageHistory);
 	mainLayout->addWidget(showCommitOptions);
+	mainLayout->addWidget(commitMessageHistory);
 
 	this->setLayout(mainLayout);
 	this->installEventFilter(this);
