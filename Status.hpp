@@ -25,6 +25,8 @@ namespace Gt
 		// Construct
 
 		/**
+		 * @pre The '_repository' argument must not be nullptr.
+		 *
 		 * @post Gather file status information.
 		 *
 		 * @param _repository Repository object.
