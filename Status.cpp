@@ -45,6 +45,7 @@ std::vector<std::string> Status::getUntrackedFiles()
 
 	for (std::size_t index = 0; index < MAXIMUM_INDEX; ++index)
 	{
+		// The entry is not modifiable and should not be freed.
 		const git_status_entry* entry = git_status_byindex(status, index);
 
 		if (entry->status == GIT_STATUS_CURRENT) continue;
