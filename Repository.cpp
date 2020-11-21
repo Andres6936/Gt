@@ -1,9 +1,20 @@
 // Joan Andrés (@Andres6936) Github.
 
+#include <iostream>
 #include <stdexcept>
 #include "Repository.hpp"
 
 using namespace Gt;
+
+// Construct
+
+Repository::Repository(std::string_view path)
+{
+	if (const int status = git_repository_open(&repository, path.data()))
+	{
+		std::cerr << "Not is possible open the directory.\n";
+	}
+}
 
 // Destructor
 
@@ -13,14 +24,6 @@ Gt::Repository::~Repository()
 }
 
 // Methods
-
-void Repository::init(std::string_view path)
-{
-	if (const int status = git_repository_init(&repository, path.data(), false))
-	{
-		throw std::runtime_error("Not is possible initialize the repository.");
-	}
-}
 
 std::vector<std::string> Repository::getUntrackedFiles()
 {

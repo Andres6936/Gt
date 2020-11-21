@@ -16,8 +16,7 @@ PanelFiles::PanelFiles(QWidget *parent) noexcept : QWidget(parent)
 
 	this->setLayout(mainLayout);
 
-	Repository repository1;
-	repository1.init("./Test/Curriculum");
+	Repository repository1 {"./Test/Curriculum"};
 
 	fileSystem->openDirectory("./Test/Curriculum");
 

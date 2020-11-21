@@ -20,13 +20,15 @@ namespace Gt
 
 	public:
 
+		// Construct
+
+		Repository(std::string_view path);
+
 		// Destructor
 
 		~Repository();
 
 		// Methods
-
-		void init(std::string_view path);
 
 		std::vector<std::string> getUntrackedFiles();
 
