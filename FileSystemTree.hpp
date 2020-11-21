@@ -17,6 +17,11 @@ namespace Gt
 
 	private:
 
+		/**
+		 * Provides access to the local filesystem, providing functions for
+		 * renaming and removing files and directories, and for creating new
+		 * directories.
+		 */
 		QFileSystemModel *fileSystem {};
 
 	public:
