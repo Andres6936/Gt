@@ -16,6 +16,10 @@ namespace Gt
 
 	private:
 
+		/**
+		 * Representation of an existing git repository, including all its
+		 * object contents.
+		 */
 		git_repository* repository {nullptr};
 
 	public:
