@@ -10,7 +10,10 @@ using namespace Gt;
 
 Repository::Repository(std::string_view path)
 {
-	if (const int status = git_repository_open(&repository, path.data()))
+	// The method will automatically detect if 'path' is a normal or bare
+	// repository or fail is 'path' is neither.
+	// C++17 Initialize variable in if-block
+	if (const int status = git_repository_open(&repository, path.data()); status not_eq 0)
 	{
 		std::cerr << "Not is possible open the directory.\n";
 	}

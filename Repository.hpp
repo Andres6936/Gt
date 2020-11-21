@@ -22,6 +22,16 @@ namespace Gt
 
 		// Construct
 
+		/**
+		 * Open the repository.
+		 *
+		 * @pre The 'path' argument must point to either a git repository
+		 *  folder, or an existing work dir.
+		 *
+		 * @post The repository is open and list for use.
+		 *
+		 * @param path Path to git repository or work dir.
+		 */
 		Repository(std::string_view path);
 
 		// Destructor
