@@ -21,7 +21,7 @@ ADD_EXECUTABLE(Gt
         PanelMessage.cpp
         PanelMessageOption.cpp
         Repository.cpp
-        )
+        Status.cpp Status.hpp)
 TARGET_INCLUDE_DIRECTORIES(Gt PRIVATE ${LIB_GIT_2_SOURCE_DIR}/include/)
 TARGET_LINK_LIBRARIES(Gt PRIVATE git2)
 TARGET_LINK_LIBRARIES(Gt PRIVATE Qt5::Widgets)
