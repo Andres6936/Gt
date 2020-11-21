@@ -15,6 +15,9 @@ namespace Gt
 
 	private:
 
+		/**
+		 * Representation of a status collection.
+		 */
 		git_status_list* status {nullptr};
 
 	public:
