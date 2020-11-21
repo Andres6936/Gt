@@ -4,6 +4,7 @@
 #define GT_FILESYSTEMTREE_HPP
 
 #include <QWidget>
+#include <QString>
 #include <QTreeView>
 #include <QFileSystemModel>
 
@@ -20,7 +21,20 @@ namespace Gt
 
 	public:
 
+		// Construct
+
 		explicit FileSystemTree(QWidget* parent = nullptr) noexcept;
+
+		// Methods
+
+		/**
+		 * Display the content of particular directory.
+		 *
+		 * @param path to new directory to show.
+		 */
+		void openDirectory(const QString& path) noexcept;
+
+		// Methods Const
 
 		void addEntry(const QString& name, const QString& path) const noexcept;
 

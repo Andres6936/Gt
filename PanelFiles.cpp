@@ -19,6 +19,8 @@ PanelFiles::PanelFiles(QWidget *parent) noexcept : QWidget(parent)
 	Repository repository1;
 	repository1.init("./Test/Curriculum");
 
+	fileSystem->openDirectory("./Test/Curriculum");
+
 	for (const std::string& files: repository1.getUntrackedFiles())
 	{
 		qWarning() << QString::fromStdString(files);
