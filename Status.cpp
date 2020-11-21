@@ -16,6 +16,7 @@ Status::Status(git_repository* _repository)
 	options.flags |= GIT_STATUS_OPT_RENAMES_HEAD_TO_INDEX;
 	options.flags |= GIT_STATUS_OPT_SORT_CASE_SENSITIVELY;
 
+	// Gather file status information and populate the git_status_list.
 	if (const int state = git_status_list_new(&status, _repository, &options); state not_eq 0)
 	{
 		std::cerr << "Not is possible get the status of repository.\n";

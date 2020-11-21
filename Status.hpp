@@ -24,6 +24,11 @@ namespace Gt
 
 		// Construct
 
+		/**
+		 * @post Gather file status information.
+		 *
+		 * @param _repository Repository object.
+		 */
 		Status(git_repository* _repository);
 
 		// Destructor
