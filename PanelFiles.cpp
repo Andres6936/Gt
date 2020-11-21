@@ -1,6 +1,5 @@
 // Joan Andrés (@Andres6936) Github.
 
-#include <git2.h>
 #include <qdebug.h>
 
 #include "Repository.hpp"
