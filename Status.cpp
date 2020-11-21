@@ -39,6 +39,8 @@ std::vector<std::string> Status::getUntrackedFiles()
 {
 	std::vector<std::string> results;
 
+	// If there are no changes in status (at least according the options given
+	// when the status list was created), this can return 0.
 	const std::size_t MAXIMUM_INDEX = git_status_list_entrycount(status);
 
 	for (std::size_t index = 0; index < MAXIMUM_INDEX; ++index)
