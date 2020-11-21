@@ -30,7 +30,7 @@ namespace Gt
 		 *
 		 * @post The repository is open and list for use.
 		 *
-		 * @param path Path to git repository or work dir.
+		 * @param path the path to the repository
 		 */
 		Repository(std::string_view path);
 
