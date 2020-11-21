@@ -10,7 +10,10 @@ using namespace Gt;
 
 Status::Status(git_repository* _repository)
 {
+	// The documentation allow initialize the object with
+	// GIT_STATUS_OPTIONS_INIT or the method git_status_options_init
 	git_status_options options = GIT_STATUS_OPTIONS_INIT;
+
 	options.show = GIT_STATUS_SHOW_INDEX_AND_WORKDIR;
 	options.flags = GIT_STATUS_OPT_INCLUDE_UNTRACKED;
 	options.flags |= GIT_STATUS_OPT_RENAMES_HEAD_TO_INDEX;
